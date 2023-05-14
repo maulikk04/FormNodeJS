@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Detail</title>
+    <%-include('./partial/navbar.ejs') %>
+</head>
+
+<body>
+    <div class="col-lg-8">
+        <div class="card mb-4">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <p class="mb-0">Full Name</p>
+                    </div>
+                    <div class="col-sm-9">
+                        <p class="text-muted mb-0">
+                            <%= user.FirstName%>
+                                <%=user.LastName %>
+                        </p>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <p class="mb-0">Email</p>
+                    </div>
+                    <div class="col-sm-9">
+                        <p class="text-muted mb-0">
+                            <%= user.Email %>
+                        </p>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <p class="mb-0">Phone</p>
+                    </div>
+                    <div class="col-sm-9">
+                        <p class="text-muted mb-0">
+                            <%= user.PhoneNo %>
+                        </p>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <p class="mb-0">Birthdate</p>
+                    </div>
+                    <div class="col-sm-9">
+                        <p class="text-muted mb-0">
+                            <%= user.Birthday %>
+                        </p>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <p class="mb-0">Gender</p>
+                    </div>
+                    <div class="col-sm-9">
+                        <% if(user.Gender=='option1' ){ %>
+                            <p class="text-muted mb-0">Female
+                            </p>
+                            <% } else if (user.Gender=='option2' ){ %>
+                                <p class="text-muted mb-0">Male
+                                </p>
+                                <% } else { %>
+                                    <p class="text-muted mb-0">Other
+                                    </p>
+                                    <% } %>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</body>
+
+</html>
